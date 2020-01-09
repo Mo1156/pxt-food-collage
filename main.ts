@@ -1,8 +1,73 @@
+function move_left_to_right2 () {
+    ball = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . 5 5 f 5 5 f 5 5 . . . . 
+. . . 5 5 5 f 5 5 f 5 5 . . . . 
+. . . 5 5 5 f 5 5 f 5 5 5 . . . 
+. . . f f f f f f f f f f . . . 
+. . . 5 5 5 f 5 5 f 5 5 5 . . . 
+. . . f f f f f f f f f f . . . 
+. . . 5 5 5 f 5 5 f 5 5 5 . . . 
+. . . 5 5 5 f 5 5 f 5 5 5 . . . 
+. . . 5 5 5 f 5 5 f 5 5 . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Enemy)
+}
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     game.over(false)
 })
+function when_hero_touches_ball_end_game () {
+    ball = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . 5 5 f 5 5 f 5 5 . . . . 
+. . . 5 5 5 f 5 5 f 5 5 . . . . 
+. . . 5 5 5 f 5 5 f 5 5 5 . . . 
+. . . f f f f f f f f f f . . . 
+. . . 5 5 5 f 5 5 f 5 5 5 . . . 
+. . . f f f f f f f f f f . . . 
+. . . 5 5 5 f 5 5 f 5 5 5 . . . 
+. . . 5 5 5 f 5 5 f 5 5 5 . . . 
+. . . 5 5 5 f 5 5 f 5 5 . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, SpriteKind.Enemy)
+}
+function background_color_blue () {
+    scene.setBackgroundColor(9)
+}
+function move () {
+    mySprite = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . f f f f . . . . . . 
+. . . . f f f 2 2 f f f . . . . 
+. . . f f f 2 2 2 2 f f f . . . 
+. . f f f e e e e e e f f f . . 
+. . f e e 2 2 2 2 2 2 e f f . . 
+. f f e 2 f f f f f f 2 e f f . 
+. f f f f f e e e e f f f f f . 
+. . f e f b f 4 4 f b f e f . . 
+. . f e 4 1 f d d f 1 4 e f f . 
+. . e f e 4 d d d d 4 e f f d f 
+. . e 4 d d e 2 2 2 2 f e f b f 
+. . . e d d e 2 2 2 2 f 4 f b f 
+. . . . e e f 5 5 4 4 f . f c f 
+. . . . . f f f f f f f . f f . 
+. . . . . . . . . f f f . . . . 
+`, SpriteKind.Player)
+}
+let ball: Sprite = null
+let mySprite: Sprite = null
 scene.setBackgroundColor(9)
-let mySprite = sprites.create(img`
+mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . f f f f . . . . . . 
 . . . . f f f 2 2 f f f . . . . 
@@ -90,7 +155,7 @@ boy.setPosition(138, 54)
 controller.moveSprite(boy)
 message_dad = "\"sup\""
 boy.say(message_dad)
-let ball = sprites.create(img`
+ball = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
